@@ -13,5 +13,9 @@ function login(){
     };
 
     console.log(req);
+    fetch("/login", {
+        method: "POST",
+        body: JSON.stringify(req),
+    });
 }
     
