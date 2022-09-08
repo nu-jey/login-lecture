@@ -12,7 +12,6 @@ function login(){
         pw: pw.value,
     };
 
-    console.log(req);
     fetch("/login", {
         method: "POST",
         headers: {
@@ -20,6 +19,17 @@ function login(){
         },
         body: JSON.stringify(req),
     })
-     .then((res) => console.log(res.json()));
+     .then((res) => res.json())
+     .then((res) => {
+        if(res.succes){
+            location.href = "/";
+        }
+        else{
+            alert(res.msg);
+        }
+     })
+     .catch((err) => {
+        console.error(new Error("로그인중 에러 발생"));
+     });
 }
     
