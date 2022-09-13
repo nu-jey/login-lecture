@@ -12,17 +12,22 @@
 
         if(id){
             if(id===client.id && pw === client.pw){
-                return { succes : true };
+                return { success : true };
             }
-            return { succes : false, msg: "비밀번호가 틀렸습니다. "}; // ID는 존재 했으므로 
+            return { success : false, msg: "비밀번호가 틀렸습니다. "}; // ID는 존재 했으므로 
         }
-        return {succes : false, msg: "존재하지 않느 아이디입니다."} // ID 조차 존재 하지 않았으므로 
+        return {success : false, msg: "존재하지 않는 아이디입니다."} // ID 조차 존재 하지 않았으므로 
     }
     
-    register(){ 
+    async register(){ 
         const client = this.body;
-        const response = UserStorage.save(client);
-        return response;
+        try{
+            const response = await UserStorage.save(client);
+            return response;
+        }
+        catch(err){
+            return {success: false, msg: err};
+        }
     }
  }
 

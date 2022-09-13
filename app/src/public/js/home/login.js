@@ -25,7 +25,7 @@ function login(){
     })  // 결과 값을 받아서 처리 
      .then((res) => res.json())
      .then((res) => {
-        if(res.succes){ // 성고했다면 루트로 이동 
+        if(res.success){ // 성고했다면 루트로 이동 
             location.href = "/";
         }
         else{   // 실패했다면 메세지 띄움 
