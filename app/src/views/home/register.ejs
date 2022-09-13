@@ -12,13 +12,15 @@
 </head>
 <body>
     <div class="login">
-        <h1>Login</h1>
+        <h1>Sign up</h1>
         <form method="post">
             <input id = "id" type="text" name="u" placeholder="아이디" required="required" />
+            <input id = "name" type="text" name="u" placeholder="이름" required="required" />
             <input id = "pw" type="password" name="p" placeholder="패스워드" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+            <input id = "confirm-pw" type="password" name="p" placeholder="패스워드 확인" required="required" />
+            <button  class="btn btn-primary btn-block btn-large">Sign up</button>
             <br><br>
-            <a class="btn btn-primary btn-block btn-large" href="/register">Sign up</a>
+            <a class="btn btn-primary btn-block btn-large" href="/login">login up</a>
         </form>
     </div>
 
