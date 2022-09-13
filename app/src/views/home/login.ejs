@@ -5,12 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+
+    <link rel="stylesheet" href="/css/home/login.css">
     <script src="/js/home/login.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <input id = "id" type="text" placeholder="아이디"><br>
-    <input id = "pw" type="text" placeholder='패스워드'><br>
-    <button>로그인</button>
+    <div class="login">
+        <h1>Login</h1>
+        <form method="post">
+            <input id = "id" type="text" name="u" placeholder="아이디" required="required" />
+            <input id = "pw" type="password" name="p" placeholder="패스워드" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+            <br>
+            <br>
+            <a class="btn btn-primary btn-block btn-large" href="/register">Sign up</a>
+        </form>
+    </div>
+
+
 </body>
 </html>
+
+<!--Copyright (c) 2022 by Tyler Fry (https://codepen.io/frytyler/pen/nJYVEO)-->
