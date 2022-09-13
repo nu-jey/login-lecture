@@ -6,9 +6,10 @@
     constructor(body){
         this.body = body;
     }
-    login(){
+    async login(){
         const client = this.body;
-        const {id, pw} = UserStorage.getUserInfo(client.id);
+        const {id, pw} = await UserStorage.getUserInfo(client.id);
+
         if(id){
             if(id===client.id && pw === client.pw){
                 return { succes : true };
