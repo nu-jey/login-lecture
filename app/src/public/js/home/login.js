@@ -9,6 +9,9 @@ loginbtn.addEventListener("click", login);
     // 로그인 버튼이 클릭 시 login() 함수 실행 
 
 function login(){
+    if(!id.value) return alert("아이디를 입력해주세요.");
+    if(!pw.value) return alert("비밀번호가 일치하지 않습니다.");
+
     const req = {
         id: id.value,
         pw: pw.value,
@@ -29,6 +32,7 @@ function login(){
             location.href = "/";
         }
         else{   // 실패했다면 메세지 띄움 
+            if(res.err) return alert(res.err);
             alert(res.msg);
         }
      })
